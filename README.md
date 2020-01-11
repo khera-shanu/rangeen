@@ -1,9 +1,8 @@
 # rangeen
-Will come back to this!
+
+`pip install rangeen`
 
 To Do
-- `_fg`
-- `_bg`
 - ASCII Art
 - Loaders in terminal
 - unit tests
