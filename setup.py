@@ -3,6 +3,7 @@
 from setuptools import setup
 from setuptools import find_packages
 
+
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -15,6 +16,11 @@ classifiers = [
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Terminals",
@@ -24,7 +30,7 @@ classifiers = [
 
 setup(
     name="rangeen",
-    version="0.0.1",
+    version="0.0.2",
     maintainer="Shanu Khera",
     maintainer_email="kherashanu@gmail.com",
     author="Shanu Khera",

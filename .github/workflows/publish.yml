@@ -1,0 +1,32 @@
+name: Publish Python Package
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod  # Specify the environment to use
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11.7'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+    
+    - name: Build and publish
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_SECRET }}  # Use the secret from the 'prod' environment
+      run: |
+        python setup.py sdist bdist_wheel
+        twine upload dist/*
